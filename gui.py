@@ -62,8 +62,8 @@ age.grid(row=4,column=1)
 def enter():
 	global MRLabel
 	MRLabel.grid_forget()
-	w=int(weight.get())
-	h=int(height.get())
+	w=float(weight.get())
+	h=float(height.get())
 	a=int(age.get())
 	BMI=int(w/(h*h))
 	BMi=str(int(BMI))
