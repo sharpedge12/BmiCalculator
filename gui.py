@@ -16,9 +16,18 @@ def openfile():
 		if sheetz[f"A{i}"].value == None :
 			break
 		else:
+			namez=sheetz[f"A{i}"].value
+			agez = sheetz[f"D{i}"].value
 			weightz=sheetz[f"B{i}"].value
 			heightz=sheetz[f"C{i}"].value
-			sheetz[f"E{i}"] = weightz/(heightz*heightz)
+			bmiz= int(weightz/(heightz*heightz))
+			sheetz[f"E{i}"] = bmiz
+			
+			sqlform = "insert into data values (%s,%s,%s,%s,%s)"
+			valuess = [namez,weightz,heightz,agez,bmiz]
+			mycursor.execute(sqlform,valuess)
+			mydb.commit()
+
 			i = i+1
 	filez.save("Result.xlsx")
 
