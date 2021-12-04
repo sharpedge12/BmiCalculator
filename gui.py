@@ -34,6 +34,7 @@ def openfile():
 root = Tk()
 root.title("Health Companion")
 #root.iconbitmap("D:\ip\gui\project\ico.ico")
+MRLabel = Label(root)
 
 welcomeL=Label(root,text="Welcome to Health Companion ! ")
 welcomeL.grid(row=0,column=0,columnspan=3)
@@ -59,6 +60,8 @@ age.grid(row=4,column=1)
 
 
 def enter():
+	global MRLabel
+	MRLabel.grid_forget()
 	w=int(weight.get())
 	h=int(height.get())
 	a=int(age.get())
@@ -74,46 +77,61 @@ def enter():
 
 	if a > 20 or a == 20:
 		if BMI < 18.5 :
-			LL=Label(root,text="Your BMI is "+BMi+" .You are underweight.Focus on Balanced and Nutrional Diet !").grid(row=5,column=0,columnspan=3)
+			MRLabel=Label(root,text="Your BMI is "+BMi+" .You are underweight.Focus on Balanced and Nutrional Diet !")
+			MRLabel.grid(row=7,column=0,columnspan=3)
 		elif BMI > 25 :
-			LL=Label(root,text="Your BMI is "+BMi+" .You are Overweight.Please Focus on excercise and prohibit Junk food !").grid(row=5,column=0,columnspan=3)
+			MRLabel=Label(root,text="Your BMI is "+BMi+" .You are Overweight.Please Focus on excercise and prohibit Junk food !")
+			MRLabel.grid(row=7,column=0,columnspan=3)
 		elif BMI < 25 and BMI > 18.5 :
-			LL=Label(root,text="Your BMI is "+BMi+" .Well Done, You are Healthy !").grid(row=5,column=0,columnspan=3)
+			MRLabel=Label(root,text="Your BMI is "+BMi+" .Well Done, You are Healthy !")
+			MRLabel.grid(row=7,column=0,columnspan=3)
 
 	if a > 0 and a < 5:
 		if BMI < 14 :
-			LL=Label(root,text="Your BMI is "+BMi+" .You are underweight.Focus on Balanced and Nutrional Diet !").grid(row=5,column=0,columnspan=3)
+			MRLabel=Label(root,text="Your BMI is "+BMi+" .You are underweight.Focus on Balanced and Nutrional Diet !")
+			MRLabel.grid(row=7,column=0,columnspan=3)
 		elif BMI > 17 :
-			LL=Label(root,text="Your BMI is "+BMi+" .You are Overweight.Please Focus on excercise and prohibit Junk food !").grid(row=5,column=0,columnspan=3)
+			MRLabel=Label(root,text="Your BMI is "+BMi+" .You are Overweight.Please Focus on excercise and prohibit Junk food !")
+			MRLabel.grid(row=7,column=0,columnspan=3)
 		elif BMI < 17 and BMI > 14 :
-			LL=Label(root,text="Your BMI is "+BMi+" .Well Done, You are Healthy !").grid(row=5,column=0,columnspan=3)
+			MRLabel=Label(root,text="Your BMI is "+BMi+" .Well Done, You are Healthy !")
+			MRLabel.grid(row=7,column=0,columnspan=3)
 
 
 	if a > 5 and a < 10:
 		if BMI < 16 :
-			LL=Label(root,text="Your BMI is "+BMi+" .You are underweight.Focus on Balanced and Nutrional Diet !").grid(row=5,column=0,columnspan=3)
+			MRLabel=Label(root,text="Your BMI is "+BMi+" .You are underweight.Focus on Balanced and Nutrional Diet !")
+			MRLabel.grid(row=7,column=0,columnspan=3)
 		elif BMI > 20 :
-			LL=Label(root,text="Your BMI is "+BMi+" .You are Overweight.Please Focus on excercise and prohibit Junk food !").grid(row=5,column=0,columnspan=3)
+			MRLabel=Label(root,text="Your BMI is "+BMi+" .You are Overweight.Please Focus on excercise and prohibit Junk food !")
+			MRLabel.grid(row=7,column=0,columnspan=3)
 		elif BMI < 20 and BMI > 16 :
-			LL=Label(root,text="Your BMI is "+BMi+" .Well Done, You are Healthy !").grid(row=5,column=0,columnspan=3)
+			MRLabel=Label(root,text="Your BMI is "+BMi+" .Well Done, You are Healthy !")
+			MRLabel.grid(row=7,column=0,columnspan=3)
 
 
 	if a > 11 and a < 15:
 		if BMI < 17 :
-			LL=Label(root,text="Your BMI is "+BMi+" .You are underweight.Focus on Balanced and Nutrional Diet !").grid(row=5,column=0,columnspan=3)
+			MRLabel=Label(root,text="Your BMI is "+BMi+" .You are underweight.Focus on Balanced and Nutrional Diet !")
+			MRLabel.grid(row=7,column=0,columnspan=3)
 		elif BMI > 22 :
-			LL=Label(root,text="Your BMI is "+BMi+" .You are Overweight.Please Focus on excercise and prohibit Junk food !").grid(row=5,column=0,columnspan=3)
+			MRLabel=Label(root,text="Your BMI is "+BMi+" .You are Overweight.Please Focus on excercise and prohibit Junk food !")
+			MRLabel.grid(row=7,column=0,columnspan=3)
 		elif BMI < 22 and BMI > 17 :
-			LL=Label(root,text="Your BMI is "+BMi+" .Well Done, You are Healthy !").grid(row=5,column=0,columnspan=3)
+			MRLabel=Label(root,text="Your BMI is "+BMi+" .Well Done, You are Healthy !")
+			MRLabel.grid(row=7,column=0,columnspan=3)
 
 
 	if a > 16 and a < 20:
 		if BMI < 18 :
-			LL=Label(root,text="Your BMI is "+BMi+" .You are underweight.Focus on Balanced and Nutrional Diet !").grid(row=5,column=0,columnspan=3)
+			MRLabel=Label(root,text="Your BMI is "+BMi+" .You are underweight.Focus on Balanced and Nutrional Diet !")
+			MRLabel.grid(row=7,column=0,columnspan=3)
 		elif BMI > 25 :
-			LL=Label(root,text="Your BMI is "+BMi+" .You are Overweight.Please Focus on excercise and prohibit Junk food !").grid(row=5,column=0,columnspan=3)
+			MRLabel=Label(root,text="Your BMI is "+BMi+" .You are Overweight.Please Focus on excercise and prohibit Junk food !")
+			MRLabel.grid(row=7,column=0,columnspan=3)
 		elif BMI < 25 and BMI > 18 :
-			LL=Label(root,text="Your BMI is "+BMi+" .Well Done, You are Healthy !").grid(row=5,column=0,columnspan=3)
+			MRLabel=Label(root,text="Your BMI is "+BMi+" .Well Done, You are Healthy !")
+			MRLabel.grid(row=7,column=0,columnspan=3)
 
 
 
@@ -124,7 +142,7 @@ btn.grid(row=5,column=0,columnspan=2)
 buttoon=Button(root,text="Select an excel file",command=openfile)
 buttoon.grid(row=6,column=0,columnspan=2)
 
+
 root.mainloop()
 
 #Made by anshul sharma //
-# Change grid of label
