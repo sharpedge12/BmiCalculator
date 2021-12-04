@@ -1,8 +1,26 @@
+import openpyxl
 from tkinter import *
 import mysql.connector
+from tkinter import filedialog
 
-mydb = mysql.connector.connect(host="localhost", user="anshul",passwd="mysql",database = "GUI")
+mydb = mysql.connector.connect(host="localhost", user="root",passwd="mysql",database = "gui")
 mycursor = mydb.cursor()
+
+def openfile():
+	filepath = filedialog.askopenfilename(title="Open excel file",filetypes=(("EXCEL FILES","*.xlsx"),("ALL FILES", "*.*")))
+
+	filez=openpyxl.load_workbook(filepath)
+	sheetz=filez["Sheet1"]
+	i=2
+	while i>=2 :
+		if sheetz[f"A{i}"].value == None :
+			break
+		else:
+			weightz=sheetz[f"B{i}"].value
+			heightz=sheetz[f"C{i}"].value
+			sheetz[f"E{i}"] = weightz/(heightz*heightz)
+			i = i+1
+	filez.save("Result.xlsx")
 
 root = Tk()
 root.title("Health Companion")
@@ -39,7 +57,7 @@ def enter():
 	BMi=str(int(BMI))
 	n = str(name.get())
 
-	sqlform = "insert into d2 values (%s,%s,%s,%s,%s)"
+	sqlform = "insert into data values (%s,%s,%s,%s,%s)"
 	valuess = [n,w,h,a,BMI]
 	mycursor.execute(sqlform,valuess)
 
@@ -94,8 +112,10 @@ def enter():
 
 btn=Button(root,text="Check my BMI",command=enter)
 btn.grid(row=5,column=0,columnspan=2)
-
+buttoon=Button(root,text="Select an excel file",command=openfile)
+buttoon.grid(row=6,column=0,columnspan=2)
 
 root.mainloop()
 
 #Made by anshul sharma //
+# Change grid of label

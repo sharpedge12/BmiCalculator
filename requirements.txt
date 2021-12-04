@@ -2,3 +2,11 @@ pip install tkinter
 pip install mysql-connector
 
 a database named gui and table named d2;
+
+to test, use the code and then to clear the table for further testing ,
+clear using " DELETE FROM d2; " command.
+
+DATABASE CREATION:-
+
+create table GUI;
+create table data(name varchar(30),weight int(10),height int(10),age int(3),BMI int(3));
